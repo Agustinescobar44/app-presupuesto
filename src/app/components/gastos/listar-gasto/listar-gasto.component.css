@@ -1,0 +1,16 @@
+.badge{
+    font-size: 1.2rem;
+}
+.animar{
+    animation: saltos .4s infinite;
+}
+
+@keyframes saltos {
+
+    50% {
+        transform: translateY(-5%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}

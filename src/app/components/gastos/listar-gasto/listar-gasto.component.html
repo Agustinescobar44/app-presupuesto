@@ -1,0 +1,26 @@
+<div class="card p-4">
+    <div class="card-title text-center"><h2>Lista de gastos</h2></div>
+
+    <div class="card-body">
+        <div class="row">
+            <div class=" col-5 alert alert-success">
+                <div>Presupuesto: <strong>{{presupuesto}}</strong></div>
+            </div>
+            <div class="col-5 offset-2" [ngClass]="aplicarColorRestante()">
+                <div>Restante: <strong>{{restante}}</strong></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between w-100" *ngFor="let gasto of listaGastos">
+                        <strong>{{gasto.nombre}}</strong>
+                        <span class="badge rounded-pill bg-success p-2">${{gasto.cantidad}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <h3 *ngIf="listaGastos.length===0">Aún no hay gastos</h3>
+
+    </div>
+</div>

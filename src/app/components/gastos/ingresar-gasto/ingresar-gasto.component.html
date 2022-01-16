@@ -1,0 +1,16 @@
+<div class="card p-4">
+    <div class="card-title text-center"><h2>Ingresar gasto</h2></div>
+    <div class="text-center">
+        <span class="badge bg-danger text-error" *ngIf="nombreIncorrecto || cantidadIncorrecta">{{textoError | uppercase}}</span>
+    </div>
+    <div class="card-body">
+        <label for="gasto" class="form-label">Nombre del gasto</label>
+        <input type="text" name="gasto" id="gasto" class="form-control form-control-lg" placeholder="Ej: Supermercado, Cine, Videojuegos, Etc..."
+        [(ngModel)]="nombreGasto">
+
+        <label for="cantidadGastada" class="form-label mt-3">Cantidad gastada</label>
+        <input type="number" name="cantidadGastada" id="cantidadGastada" class="form-control form-control-lg" placeholder="Cantidad de dinero gastado" [(ngModel)]="cantidadGastada">
+
+        <button (click)="enviarGasto()" class="btn btn-secondary btn-lg mt-3">Ingresar</button>
+    </div>
+</div>
